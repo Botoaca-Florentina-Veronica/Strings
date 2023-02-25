@@ -10,7 +10,7 @@ int main(void)
     printf("Introduceti textul dvs: ");
     fgets(input, 100, stdin);
     n=strlen(input); //length array
-    while(i<n)
+    for(i=0; i<n; i++)
     {
         if(input[i]==' ' && (input[i+1]==' ' || input[i-1]==' '))
         {
@@ -19,10 +19,6 @@ int main(void)
             {
                 input[j]=input[j+1]; //we move on to the next index, when we are at a deleting space
             }
-        }
-        else
-        {
-            i++;
         }
     }
     //After removing space, reduce the string's length by one and, at the end, 
