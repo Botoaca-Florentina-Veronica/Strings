@@ -9,15 +9,15 @@ int main(void)
     int i, j, n=0;
     printf("Introduceti textul dvs: ");
     fgets(input, 100, stdin);
-    n=strlen(input); //lungime vector
+    n=strlen(input); //length array
     while(i<n)
     {
         if(input[i]==' ' && (input[i+1]==' ' || input[i-1]==' '))
         {
-            n--;  //daca gasim un spatiu in plus il scadem din lungimea vectorului
+            n--;  //if we find a multiple space, then we decrement the length of the array by 1
             for(j=i; j<n; j++)
             {
-                input[j]=input[j+1]; //caracterul de unde aveam spatiu multiplu trece la pozitia urmatoare
+                input[j]=input[j+1]; //we move on to the next index, when we are at a deleting space
             }
         }
         else
@@ -25,7 +25,9 @@ int main(void)
             i++;
         }
     }
-    input[n]='\0';  //informam compiler-ul ca dupa caracterul null nu mai avem alte caractere si sa se opreasca acum
+    //After removing space, reduce the string's length by one and, at the end, 
+    //initialize a null-terminated character ('0') to inform the compiler that there are no more characters inside the string after that null-terminated character.
+    input[n]='\0';  
     printf("%s\n", input);
     printf("\n");
     return 0;
