@@ -7,7 +7,7 @@ int main(void)
 {
     char input[100];
     int i, j, n=0;
-    printf("Introduceti textul dvs: ");
+    printf("Write a string: ");
     fgets(input, 100, stdin);
     n=strlen(input); //length array
     for(i=0; i<n; i++)
