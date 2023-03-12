@@ -1,4 +1,4 @@
-//C rpogram that checks if a word is a palindrome or not
+//C program that checks if a word is a palindrome or not
 #include <stdio.h>
 #include <string.h>
 
