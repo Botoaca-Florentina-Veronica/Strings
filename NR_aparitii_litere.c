@@ -1,4 +1,6 @@
  //se citește un text care este alcătuit doar din litere. Să se afișeze pentru fiecare literă de câte ori apare în text
+
+//met1
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -30,4 +32,31 @@ int main()
     return 0;
 }
 
+
+//met2
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int main(void)
+{
+    int i, n;
+    int count[26]={0};
+    char str[1000];
+    printf("Introduceti un sir de caractere: ");
+    fgets(str, 1000, stdin);
+    n=strlen(str);
+    for(i=0; i<n; i++)
+    {
+        if(isalpha(str[i]))
+        {
+            count[toupper(str[i])-'A']++;
+        }
+    }
+    for(i=0; i<26; i++)
+    {
+        printf("%c - %d\n", i+'A', count[i]);
+    }
+    return 0;
+}
 
